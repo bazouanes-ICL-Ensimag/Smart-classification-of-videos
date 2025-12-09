@@ -19,7 +19,7 @@ data/
 │   └── g19/ ... g22/    (4 groupes)
 └── testSet/
     └── g23/ ... g25/    (3 groupes)
-
+```
 Pour stocker ces données, j'ai utilisé le service AWS S3. Cependant, plus lors de l'exécution des codes, la transmission des données a échoué car ce serveur n’a pas d’accès Internet.
 
 Pour cela j'ai du retélécharger ces données sur le serveur, et stocker les frames extraites et les features sur ce serveur. 
