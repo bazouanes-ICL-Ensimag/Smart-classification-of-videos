@@ -31,7 +31,8 @@ Pour cela j'ai du retélécharger ces données sur le serveur, et stocker les fr
 ### Serveur
 **Narval (Compute Canada)** - Nécessite soumission de jobs SLURM.
 
-### Environnement virtuel virtualPyEnv (qui contient toutes les libraries nécessaires) à activer dans chaque job SLURM. (Il faut veiller à ce que la version python soit compatible avec la librairie pytorch).
+### Environnement virtuel :
+virtualPyEnv (qui contient toutes les libraries nécessaires) à activer dans chaque job SLURM. (Il faut veiller à ce que la version python soit compatible avec la librairie pytorch).
 
 ### Limitations
 - ResNet50 pré-téléchargé dans `~/.cache/torch/`
