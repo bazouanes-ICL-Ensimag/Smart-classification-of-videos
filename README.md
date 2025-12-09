@@ -46,7 +46,7 @@ Pour cela j'ai du retélécharger ces données sur le serveur, et stocker les fr
 **Objectif :** Réduire la redondance en sélectionnant les frames pertinentes et informatives
 
 **Méthode :** Coefficient de Dice (similarité inter-frames)
-- Conserve frames 0 et 1
+- Conserve frames 0 et 1.
 - Pour chaque frame suivante : si similarité < moyenne historique → garde la frame.
 
 
