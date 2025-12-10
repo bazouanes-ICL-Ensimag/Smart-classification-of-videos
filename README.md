@@ -22,7 +22,7 @@ data/
 ```
 Pour stocker ces données, j'ai utilisé le service AWS S3. Cependant, plus tard, lors de l'exécution des codes, la transmission des données au serveur Narval (serveur sur lequel j'exécute mon code) a échoué car ce serveur n’a pas d’accès Internet lors de l'exécution des tâches.
 
-Pour cela j'ai du retélécharger ces données sur le serveur, et stocker les frames extraites et les features sur ce serveur. 
+Pour cela j'ai dû retélécharger ces données sur le serveur, et stocker les frames extraites et les features sur ce serveur. 
 
 ---
 
