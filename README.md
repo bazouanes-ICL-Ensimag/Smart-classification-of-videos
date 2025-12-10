@@ -4,7 +4,7 @@ Classification intelligente des vidéos d'actions humaines du dataset UCF-101 ut
 
 ## Analyse du dataset : 
 
-Le rapport Rapport_de_stage_SCV.pdf permet d'étudier l'équilibre entre les classes et de prédire comment la sur-représentation ou la sous représentation  d'une classe peut affecter le modèle de classification. Dans ce contexte, nous justifions l'utilisation des groupes g01,...,g25 qui sont bien équilibrés. 
+La séction **3.2.Analyse exploratoire du dataset UCF-101** (du fichier Rapport_de_stage_SCV.pdf) permet d'étudier l'équilibre entre les classes et présentent quelques figures afin de prédire comment la sur-représentation ou la sous représentation  d'une classe peut affecter le modèle de classification. Dans ce contexte, nous justifions l'utilisation des groupes g01,...,g25 qui sont bien équilibrés. 
 
 ## 📁 Structure des Données
 
