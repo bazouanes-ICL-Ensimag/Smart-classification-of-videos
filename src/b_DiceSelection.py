@@ -6,11 +6,7 @@ Sélection adaptative des frames avec le coefficient de Dice
 import cv2
 import numpy as np
 from pathlib import Path
-from tqdm import tqdm
-import multiprocessing as mp
-from concurrent.futures import ProcessPoolExecutor
-import argparse
-import time
+
 
 
 def compute_dice_coeff(frame1, frame2):
@@ -89,43 +85,3 @@ def select_and_save_frames(video_path, output_dir):
     }
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--data_dir', default='./data')
-    parser.add_argument('--output_dir', default='./data/DiceFrames')
-    parser.add_argument('--num_workers', type=int, default=32)
-    
-    args = parser.parse_args()
-    
-    # Lister vidéos
-    videos = sorted(Path(args.data_dir).rglob("*.avi"))
-    print(f"{len(videos)} vidéos trouvées")
-    
-    # Traitement en parallèle
-    results = []
-    start = time.time()
-    
-    with ProcessPoolExecutor(max_workers=args.num_workers) as executor:
-        futures = [executor.submit(select_and_save_frames, v, args.output_dir) for v in videos]
-        
-        for future in tqdm(futures, desc="Sélection"):
-            try:
-                results.append(future.result())
-            except Exception as e:
-                raise RuntimeError(f"❌ Worker échoué: {e}")
-    
-    elapsed = time.time() - start
-    
-    # Stats
-    print(f"\n✅ Terminé!")
-    print(f"Vidéos: {len(results)}/{len(videos)}")
-    print(f"Temps: {elapsed/60:.1f} min")
-    print(f"Vitesse: {len(results)/elapsed:.1f} vid/s")
-    
-    if results:
-        avg = np.mean([r['ratio'] for r in results])
-        print(f"Taux sélection: {avg:.1%}")
-
-
-if __name__ == "__main__":
-    main()
