@@ -64,20 +64,20 @@ def main():
             })
     
     print(f"\n{'='*50}")
-    print(f"✅ Vidéos OK: {ok_count}/{len(videos)} ({ok_count/len(videos)*100:.1f}%)")
-    print(f"❌ Vidéos corrompues: {len(corrupted)}/{len(videos)} ({len(corrupted)/len(videos)*100:.1f}%)")
+    print(f" Vidéos OK: {ok_count}/{len(videos)} ({ok_count/len(videos)*100:.1f}%)")
+    print(f" Vidéos corrompues: {len(corrupted)}/{len(videos)} ({len(corrupted)/len(videos)*100:.1f}%)")
     print(f"{'='*50}")
     
     if corrupted:
         with open(args.output, 'w') as f:
             json.dump(corrupted, f, indent=2)
-        print(f"\n📄 Liste sauvegardée: {args.output}")
+        print(f"\n Liste sauvegardée: {args.output}")
         
-        print(f"\n❌ Premières vidéos corrompues:")
+        print(f"\n Premières vidéos corrompues:")
         for vid in corrupted[:10]:
             print(f"  - {vid['name']}: {vid['reason']}")
     else:
-        print(f"\n🎉 Aucune vidéo corrompue détectée!")
+        print(f"\n Aucune vidéo corrompue détectée!")
 
 
 if __name__ == "__main__":
