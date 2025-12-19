@@ -93,15 +93,27 @@ Sauvegarde HDF5 (featuresResNet50.h5)
 
 **Architecture :**
 ```
+Architecture MLP
+
 Input : (8192,)  [4 × 2048 aplati]
     ↓
-Dense(2048) + ReLU + Dropout(0.5)
+Linear(8192 → 4096)
     ↓
-Dense(1024) + ReLU + Dropout(0.5)
+BatchNorm1d(4096)
     ↓
-Dense(512) + ReLU + Dropout(0.3)
+ELU
     ↓
-Dense(101)  [softmax implicite dans CrossEntropyLoss]
+Dropout(0.4)
+    ↓
+Linear(4096 → 1024)
+    ↓
+BatchNorm1d(1024)
+    ↓
+ELU
+    ↓
+Dropout(0.3)
+    ↓
+Linear(1024 → 101)  [softmax implicite dans CrossEntropyLoss]
 ```
 
 **Code :** `src/d_MLP.py`
